@@ -4,7 +4,8 @@ metadata:
   name:  myappv2-svc
 spec:
   selector:
-    app: myapp
+    #Must Match with deployment
+    name: myapp
     version: v2
   type:  ClusterIP
   ports:
