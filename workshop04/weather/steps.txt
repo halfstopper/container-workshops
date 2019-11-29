@@ -1,0 +1,7 @@
+#Get gate address
+kubectl get po,deploy,svc -n istio-system
+
+#Add in sidecar for communication
+istioctl kube-inject -f weatherapp-deployment.yaml > weatherapp-deployment-withsidecar.yaml 
+
+#Apply all the yaml files
