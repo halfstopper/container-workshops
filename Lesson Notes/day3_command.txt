@@ -1,0 +1,38 @@
+# Kubernetes config file from digitalocean
+put kubernetes config file at ~/.kube
+
+Annotation is to extend	 kubernetes
+
+Clean the colume before container mounting it
+
+#To get the annotations and storageClassname
+kubectl get storageclasses.storage.k8s.io 
+
+kubectl describe persistentvolumeclaim/mysqldb-pvc
+
+kubectl get pvc
+
+kubectl get pods -w
+
+kubectl get deployments
+
+#To enter the shellcommand of the pod
+kubectl exec -ti [podname] bash
+
+#Port forward
+kubectl port-forward [node] [port]:[port]
+
+
+kubectl get pods -n kube-system
+
+
+#Get ingress information
+kubectl get ing
+
+
+#Apply ingress rule for nginx
+kubectl apply -f app-ingress.yaml
+
+#Too many yaml file
+
+use helm create mlapp

@@ -1,0 +1,65 @@
+### Day 1
+Command in lesson:
+
+#For docker Machine
+sgp1	(region)
+s-1vcpu-2gb  (slug)
+ubuntu-18-04-x64
+
+
+$docker-machine create --driver digitalocean --digitalocean-access-token=9eb627c2308c843d9846517ee58964098dd2ccda4e85370927dfd49c3f6eb8e9 --digitalocean-image ubuntu-18-04-x64 --digitalocean-region sgp1 --digitalocean-size s-1vcpu-2gb mydockerhost
+
+$docker-machine create \
+    --driver digitalocean \
+	--digitalocean-access-token=592c1b9b6c6aa438279d6c16d39be97a87bae3c2347db964b9055bc68bb82de  \
+	--digitalocean-image ubuntu-18-04-x64 \
+	--digitalocean-region sgp1 \
+	--digitalocean-size s-1vcpu-2gb \
+	mydockerhost
+
+#Run on remote digital ocean envrionment for docker
+$docker-machine env mydockerhost
+
+
+RUN  is during buildtime
+
+$docker build -t halfstopper/myfortuneapp:v1 .
+
+docker exec myapp ls
+#Inside the container
+docker exec -ti myapp bash
+
+#Execute commands for the container
+docker exec [container_name] ls
+
+$docker build -t halfstopper/myfortuneapp:v2 .
+
+
+docker login
+docker push [images]
+
+
+
+docker run -d -p 80:3000 --name [name] bendanye/myfortuneapp:v2
+
+##GIT Command to github
+
+git init
+git add .
+git commit -m 'comment for pushing'
+git remote add origin [git websites]
+git config --global [email address] 
+
+docker volume create myvol
+docker volume ls
+
+docker inspect [running_container_name]
+
+-e = DB_HOST = 172.17.0.2
+
+docker history 
+
+docker run -d -v myvol:/var/lib/mysql --name webdb halfstopper30/mynorthwinddb:v3
+docker-cimpose up -d
+
+###

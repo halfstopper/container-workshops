@@ -1,0 +1,51 @@
+#Day 4
+
+pass the bin file into /usr/local/bin
+
+CRD = custom resource definition
+
+kubectl get crd -n istio-system | grep istio.io
+
+History
+ 1811  kubectl get deployment
+ 1812  kubectl get deployments -n kube-system
+ 1813  kubectl delete tiller-sa.yaml 
+ 1814  kubectl delete tiller-deploy
+ 1815  kubectl delete deployments tiller-deploy
+ 1816  kubectl delete deployments tiller-deploy -n kube-system
+ 1817  kubectl get sa-n kube-system
+ 1818  kubectl get sa -n kube-system
+ 1819  kubectl delete sa tiller-sa -n kube-system
+ 1820  kubectl delete sa tiller -n kube-system
+ 1821  ls
+ 1822  kubectl apply -f helm-service-account.yaml 
+ 1823  kubectl get sa -n kube-system
+ 1824  htlm init --service-account tiller
+ 1825  helm init --service-account tiller
+ 1826  kubectl get pods
+ 1827  kubectl get pods -n kube-system
+ 1828  helm ls
+ 1829  ls
+ 1830  kubectl get sa -n kube-system
+ 1831  history
+ 1832  kubectl get pods -n kube-system
+ 1833  clear
+ 1834  kubectl create ns istio-system
+ 1835  helm install istio-init --name istio-init --namespace istio-system
+ 1836  kubectl get crd --namespace istio-system | grep istio.io | wc -l
+ 1837  helm install istio --name istio --namespace istio-system --values istio/values-istio-demo.yaml
+ 1838  kubectl get pods -n istio-system
+
+#Add in sidecar for communication
+istioctl kube-inject -f fortuneap-deployment.yaml > fortuneapp-deployment-withsidecar.yaml
+
+kubectl apply -f fortuneapp-deployment-withcidecar.yaml
+
+
+#Istio rules :
+Gateway -> virtualService -> Destination Rule
+
+path
+fortune.157.230.194.100.nip.io
+
+weatherapp-deployment-withsidecar.yaml

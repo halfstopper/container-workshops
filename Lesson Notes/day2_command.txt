@@ -1,0 +1,60 @@
+### Day 2
+
+Must be odd number of nodes
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+#If  you do not want to do ~/.kube
+export KUBECONFIG = '[your kubeconfig yml file full path]'
+
+kubectl cluster-info
+kubectl get nodes
+kubectl describe nodes
+kubectl get ns
+
+#List all the pods running 
+kubectl get po -n kube-system
+
+#Deployment contain pods
+#List the deployments
+kubectl get deploy -n kube-system
+$List the service
+kubectl get svc -n kube-system
+#Describe the services
+kubectl describe service/kube-dns -n kube-system
+
+#Create namespace guide
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.16/#namespace-v1-core
+
+#Apply yml file on the directory of the project
+kubectl apply -f [yml file]
+
+#Every pod has an ip address, for internally only
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.16/#container-v1-core
+
+kubectl port-forward po/fortune-pod 8080:3000 -n myns
+
+kubectl get po,deploy -n [namespace]
+
+kubectl get rs -n [namespace]
+
+#Replica set is how many is running
+#Scaling number of replicas
+kubectl scale --replicas=1 deploy/fortune-deploy -n myns
+
+#Delete deployment
+kubectl delete -f fortune.yaml
+
+
+create new namespace
+DV_USER
+DB_PASSWORD
+database.yaml
+Namespace = 
+
+MYSQL_ROOT_PASSWORD is DB_PASSWORD is changeit
+
+
+kubectl get po,deploy,svc -n [namespace]
+
+kubectl apply -f newapp_v2.yaml
